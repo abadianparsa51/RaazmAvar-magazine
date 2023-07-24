@@ -1,0 +1,214 @@
+@import './../abstract/headquarters';
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?33nf3o');
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?33nf3o#iefix')
+      format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?33nf3o')
+      format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?33nf3o')
+      format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?33nf3o##{$icomoon-font-family}')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: '#{$icomoon-font-family}' !important;
+  speak-as: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cancel {
+  &:before {
+    content: $icon-cancel;
+  }
+}
+.icon-login {
+  &:before {
+    content: $icon-login;
+  }
+}
+.icon-maps-and-flags {
+  &:before {
+    content: $icon-maps-and-flags;
+  }
+}
+.icon-next {
+  &:before {
+    content: $icon-next;
+  }
+}
+.icon-sort-button-with-three-lines {
+  &:before {
+    content: $icon-sort-button-with-three-lines;
+  }
+}
+.icon-user .path1 {
+  &:before {
+    content: $icon-user-path1;
+    color: rgb(164, 194, 247);
+  }
+}
+.icon-user .path2 {
+  &:before {
+    content: $icon-user-path2;
+    margin-left: -1em;
+    color: rgb(227, 231, 242);
+  }
+}
+.icon-user .path3 {
+  &:before {
+    content: $icon-user-path3;
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-user .path4 {
+  &:before {
+    content: $icon-user-path4;
+    margin-left: -1em;
+    color: rgb(127, 172, 250);
+  }
+}
+.icon-user .path5 {
+  &:before {
+    content: $icon-user-path5;
+    margin-left: -1em;
+    color: rgb(164, 194, 247);
+  }
+}
+.icon-user .path6 {
+  &:before {
+    content: $icon-user-path6;
+    margin-left: -1em;
+    color: rgb(66, 141, 255);
+  }
+}
+.icon-user .path7 {
+  &:before {
+    content: $icon-user-path7;
+    margin-left: -1em;
+    color: rgb(66, 141, 255);
+  }
+}
+.icon-wallet {
+  &:before {
+    content: $icon-wallet;
+  }
+}
+.icon-coach {
+  &:before {
+    content: $icon-coach;
+  }
+}
+.icon-dumbbell {
+  &:before {
+    content: $icon-dumbbell;
+  }
+}
+.icon-heart-outline {
+  &:before {
+    content: $icon-heart-outline;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+.icon-play-button {
+  &:before {
+    content: $icon-play-button;
+  }
+}
+.icon-right-arrow {
+  &:before {
+    content: $icon-right-arrow;
+  }
+}
+.icon-share1 {
+  &:before {
+    content: $icon-share1;
+  }
+}
+.icon-speaker {
+  &:before {
+    content: $icon-speaker;
+  }
+}
+.icon-valentines-heart {
+  &:before {
+    content: $icon-valentines-heart;
+  }
+}
+.icon-video {
+  &:before {
+    content: $icon-video;
+  }
+}
+.icon-warning1 .path1 {
+  &:before {
+    content: $icon-warning1-path1;
+    color: rgb(73, 90, 121);
+  }
+}
+.icon-warning1 .path2 {
+  &:before {
+    content: $icon-warning1-path2;
+    margin-left: -1em;
+    color: rgb(66, 81, 109);
+  }
+}
+.icon-warning1 .path3 {
+  &:before {
+    content: $icon-warning1-path3;
+    margin-left: -1em;
+    color: rgb(255, 222, 51);
+  }
+}
+.icon-warning1 .path4 {
+  &:before {
+    content: $icon-warning1-path4;
+    margin-left: -1em;
+    color: rgb(255, 188, 51);
+  }
+}
+.icon-warning1 .path5 {
+  &:before {
+    content: $icon-warning1-path5;
+    margin-left: -1em;
+    color: rgb(73, 90, 121);
+  }
+}
+.icon-warning1 .path6 {
+  &:before {
+    content: $icon-warning1-path6;
+    margin-left: -1em;
+    color: rgb(73, 90, 121);
+  }
+}
+.icon-warning1 .path7 {
+  &:before {
+    content: $icon-warning1-path7;
+    margin-left: -1em;
+    color: rgb(66, 81, 109);
+  }
+}
+.icon-warning1 .path8 {
+  &:before {
+    content: $icon-warning1-path8;
+    margin-left: -1em;
+    color: rgb(66, 81, 109);
+  }
+}

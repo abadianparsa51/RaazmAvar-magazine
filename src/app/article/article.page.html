@@ -1,0 +1,37 @@
+<div class="container" [ngClass]="{ violet: true }">
+  <ng-template #notArticleData>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="articleData; else notArticleData">
+    <app-cover [data]="articleData.coverData"></app-cover>
+    <div class="mainTitle" [style.backgroundImage]="'url(assets/image/right-quotation-mark.png)'">
+      <p> {{ articleData.mainTitle }} </p>
+    </div>
+    <app-paragraph [data]="articleData.textData"></app-paragraph>
+    <div class="flex-col between-sm middle-sm between-xs middle-xs author">
+      <div class="col-sm-11 col-xs-11 names">
+        <div class="flex-col column-sm column-xs">
+          <p>نویسنده خبر</p>
+          <h6 style="font-size: 0.9rem">{{ articleData.author_name }}</h6>
+        </div>
+      </div>
+      <div
+        class="flex-col middle-sm center-sm middle-xs center-xs image"
+        [style.backgroundImage]="'url(' + articleData.author_img + ')'"
+      ></div>
+    </div>
+    <div class="lastVideosContainer">
+      <div class="flex-col middle-sm center-sm middle-xs center-xs title">
+        <img src="/assets/image/031-video-camera.svg" alt="" />
+        <p>خبرهای مرتبط</p>
+      </div>
+      <div class="flex-col middle-sm middle-xs content">
+        <ng-container *ngFor="let data of articleData.lastNews">
+          <app-last-card [data]="data" class="noPlayerIcon"></app-last-card>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,71 @@
+@import './../../../assets/abstract/headquarters';
+.searchBoxContainer {
+  width: 100%;
+  height: 4rem;
+  background-position: center;
+  background-size: cover;
+  background-color: $red;
+  background-blend-mode: soft-light;
+  color: $white;
+  font-size: 1.5rem;
+  border-radius: $border_radius;
+}
+.showOnMapContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  z-index: 1200;
+  transition: 0.3s;
+  &.open {
+    top: 0;
+  }
+  .mapheader {
+    width: 100%;
+    height: 5rem;
+    span {
+      font-size: 2rem;
+      color: $red;
+      transform: rotate(180deg);
+    }
+  }
+}
+.cardContainer {
+  padding: 1rem;
+  position: absolute;
+  bottom: -100%;
+  left: 2.5%;
+  z-index: 1201;
+  width: 95%;
+  background-color: $red;
+  transition: 0.3s;
+  color: $white;
+  border-top-left-radius: $border_radius;
+  border-top-right-radius: $border_radius;
+  &.open {
+    bottom: 0;
+  }
+  .avatar {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+  }
+  .titles {
+    padding: 1rem;
+    flex: 1;
+    p {
+      margin-top: 1rem;
+    }
+  }
+  .faves {
+    width: 5rem;
+    span {
+      font-size: 1.5rem;
+    }
+  }
+}

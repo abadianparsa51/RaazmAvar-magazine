@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain>localhost</domain>
+        <domain includeSubdomains="true">hypertire.com</domain>
+        <domain includeSubdomains="true">mobile.khabarrazmavar.ir</domain>
+        <domain includeSubdomains="true">khabarrazmavar.ir</domain>
+    </domain-config>
+</network-security-config>

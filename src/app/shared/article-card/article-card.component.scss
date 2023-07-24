@@ -1,0 +1,56 @@
+@import './../../../assets/abstract/headquarters';
+:host {
+  &:not(:last-child) {
+    margin-left: 1rem;
+  }
+  &.noPlayerIcon {
+    .playIcon {
+      display: none;
+    }
+  }
+  a {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.lastCardContainer {
+  width: 25rem;
+  height: 14rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: $border_radius;
+  overflow: hidden;
+  position: relative;
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $black, $alpha: 0.5);
+  }
+  .titlesContainer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    color: $white;
+    .titles {
+      .title {
+        margin-bottom: 1rem;
+        p {
+          font-size: 1.7rem;
+        }
+      }
+    }
+    .playIcon {
+      background-color: $red;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      box-shadow: 0 0 2rem 0 $red;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import './../../../assets/abstract/headquarters';
+.btn {
+  padding: 1rem 2rem;
+  border-radius: $border_radius;
+  transition: box-shadow 0.2s;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0.4rem 1rem rgba($color: #000000, $alpha: 0.3);
+  }
+  &_red {
+    color: $white;
+    background-color: $red;
+  }
+  span[class^='icon'] {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+}

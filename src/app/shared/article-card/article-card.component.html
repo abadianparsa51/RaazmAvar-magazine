@@ -1,0 +1,30 @@
+<div class="flex-col column-sm column-xs articleCardContainer">
+  <ng-container *ngFor="let data of data">
+    <a [routerLink]="[data.link]">
+      <div
+        class="lastCardContainer"
+        [style.backgroundImage]="'url(' + data.image + ')'"
+      >
+        <div class="overlay"></div>
+        <div class="flex-col titlesContainer">
+          <div class="col-sm-12 column-sm col-xs-12 column-xs titles">
+            <div class="title">
+              <p>{{ data.title | shorten: '30' }}</p>
+            </div>
+            <div class="subtitle">
+              <p>{{ data.subtitle }}</p>
+            </div>
+          </div>
+          <div
+            class="col-sm-4 middle-sm center-sm col-xs-4 middle-xs center-xs  "
+          >
+            <div
+              class="flex-col middle-sm center-sm middle-xs center-xs  playIcon"
+            >
+              <span class="icon-play-button"></span>
+            </div>
+          </div>
+        </div></div
+    ></a>
+  </ng-container>
+</div>

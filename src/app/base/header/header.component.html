@@ -1,0 +1,104 @@
+<div
+  class="flex-col middle-sm around-sm middle-xs around-xs header"
+  [ngClass]="{ violet: checkpage() }"
+>
+  <div class="col-sm-3 middle-sm center-sm col-xs-3 middle-xs center-xs menu">
+    <span class="icon-menu" (click)="openMenu()"></span>
+  </div>
+  <div class="col-sm-10 middle-sm center-sm col-xs-10 middle-xs center-xs logo">
+    <ng-container *ngIf="checkpage()">
+      <a [routerLink]="['/']"
+        ><img
+          class="flex-col middle-sm center-sm middle-xs center-xs"
+          src="/assets/image/logo.png"
+          alt=""
+      /></a>
+    </ng-container>
+    <ng-container *ngIf="!checkpage()">
+      <a [routerLink]="['/']">
+        <img
+          class="flex-col middle-sm center-sm middle-xs center-xs"
+          src="/assets/image/whitelogo.png"
+          alt=""
+        />
+      </a>
+    </ng-container>
+  </div>
+  <div
+    class="col-sm-3 middle-sm center-sm col-xs-3 middle-xs center-xs backArrow"
+  >
+    <a (click)="back()"
+      ><span class="icon-right-arrow" *ngIf="checkpagearrow()"></span
+    ></a>
+  </div>
+</div>
+<div class="menuContainer" [ngClass]="{ open: menuFlag }">
+  <div class="overlay" (click)="closeMenu()"></div>
+  <div class="flex-col column-sm column-xs menu" [ngClass]="{ open: menuFlag }">
+    <div
+      class="flex-col column-sm column-xs menuHeader"
+      [style.backgroundImage]="'url(assets/image/a.png)'"
+    >
+      <div class="flex-col middle-sm middle-xs menuIcon">
+        <span class="icon-menu" (click)="closeMenu()"></span>
+      </div>
+      <div class="flex-col column-sm column-xs menuUserDetails">
+        <ng-container *ngIf="isLogin">
+          <div
+            class="userAvatar"
+            [style.backgroundImage]="'url(' + menuInfo?.image + ')'"
+          ></div>
+          <div class="userName">
+            <h6>{{ menuInfo?.name }}</h6>
+          </div>
+          <div class="userPoint">
+            <p>امتیاز : {{menuInfo?.point}}</p>
+          </div>
+        </ng-container>
+      </div>
+      <div class="flex-col end-sm end-xs menuSignOut">
+        <ng-container *ngIf="isLogin">
+          <p (click)="signOut()">خروج از حساب کاربری</p>
+        </ng-container>
+        <ng-container *ngIf="!isLogin">
+          <p>وارد شوید !!!</p>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-sm column-sm col-xs column-xs menuList">
+      <ul class="flex-col column-sm column-xs">
+        <li>
+          <a [routerLink]="['/home']" (click)="closeMenu()">صفحه اصلی</a>
+        </li>
+        <ng-container *ngIf="isLogin">
+          <li>
+            <a [routerLink]="['/article']" (click)="closeMenu()"
+              >فهرست مورد علاقه</a
+            >
+          </li>
+          <li>
+            <a [routerLink]="['/article']" (click)="closeMenu()">شارژ حساب</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profile']" (click)="closeMenu()">پروفایل </a>
+          </li>
+        </ng-container>
+
+        <li>
+          <a
+            *ngIf="!isLogin"
+            [routerLink]="['/authentication/login']"
+            (click)="closeMenu()"
+            >ورود / ثبت نام</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div
+      class="col-sm column-sm middle-sm center-sm col-xs column-xs middle-xs center-xs menuLogo"
+    >
+      <img src="assets/image/menulogo.png" alt="" />
+      <p class="small">1.0.0.1</p>
+    </div>
+  </div>
+</div>

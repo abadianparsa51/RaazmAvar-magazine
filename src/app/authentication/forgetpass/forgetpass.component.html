@@ -1,0 +1,19 @@
+<div class="flex-col column-sm column-xs loginContainer">
+  <app-input
+    [placeholderValue]="'نام کاربری'"
+    [type]="'text'"
+    (mainValue)="getUsername($event)"
+  ></app-input>
+  <app-button
+    (click)="checkusernameVal()"
+    [btnTitle]="'تایید کد'"
+    [customClass]="'btn btn_red'"
+    *ngIf="loading"
+  ></app-button>
+  <div
+    class="flex-col center-sm middle-sm center-xs middle-xs forgetpassContainer"
+    *ngIf="!loading"
+  >
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</div>

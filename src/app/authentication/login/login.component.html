@@ -1,0 +1,31 @@
+<div class="flex-col column-sm column-xs loginContainer">
+  <app-input
+    [placeholderValue]="'نام کاربری'"
+    [type]="'text'"
+    (mainValue)="getUsername($event)"
+  ></app-input>
+  <app-input
+    [placeholderValue]="'کلمه عبور'"
+    [type]="'password'"
+    (mainValue)="getPassword($event)"
+  ></app-input>
+  <div
+    class="flex-col center-sm middle-sm center-xs middle-xs forgetpassContainer"
+  >
+    <a [routerLink]="['/authentication/forgetpassword']"
+      >کلمه عبور را فراموش کرده اید ؟</a
+    >
+  </div>
+  <app-button
+    (click)="checkUser()"
+    [btnTitle]="'ورود'"
+    [customClass]="'btn btn_red'"
+    *ngIf="loading"
+  ></app-button>
+  <div
+    class="flex-col center-sm middle-sm center-xs middle-xs forgetpassContainer"
+    *ngIf="!loading"
+  >
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</div>

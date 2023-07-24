@@ -1,0 +1,45 @@
+@import './../../../assets/abstract/headquarters';
+.coverContainer {
+  .red{
+    color: red;
+  }
+  width: calc(100% + 2rem);
+  height: 40rem;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  left: 1rem;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+  }
+  &::before {
+    top: 0;
+    background-image: linear-gradient(to bottom, $violet, transparent);
+  }
+  &::after {
+    bottom: 0;
+    background-image: linear-gradient(to top, $violet, transparent);
+  }
+  .contentContainer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    padding: 2rem;
+    .titlesContainer {
+      .title {
+        margin-bottom: 1rem;
+      }
+    }
+    .buttonsContainer {
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+}

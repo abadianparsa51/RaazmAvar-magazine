@@ -1,0 +1,22 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
+// and used throughout the application.
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* make scrollbar transparent */
+}
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import './../assets/abstract/headquarters';
+@import './../assets/fonts/fonts';
+@import './../assets/icon/font';
+@import './../assets/Neotis/style.min';
+@import './../assets/reset/reset';
+@import './../assets/container/container';
+@import './../assets/loader/loader';
+@import './../assets/header/header';
+@import './../assets/navigation/navigation';
+@import './../assets/background/background';

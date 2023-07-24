@@ -1,0 +1,33 @@
+<div class="flex-col navigation" [ngClass]="{ violet: checkpage() }">
+  <a
+    class="col column-sm center-sm middle-sm column-xs center-xs middle-xs"
+    [routerLink]="['/newslist']"
+  >
+    <span class="icon-speaker"></span>
+    <p>اخبار و مقالات</p></a
+  >
+
+  <a
+    class="col column-sm center-sm middle-sm column-xs center-xs middle-xs"
+    [routerLink]="['/offline-videoslist']"
+  >
+    <span class="icon-video"></span>
+    <p>ویدیوها</p>
+  </a>
+
+  <a
+    class="col column-sm center-sm middle-sm column-xs center-xs middle-xs"
+    [routerLink]="['/coach-list']"
+  >
+    <span class="icon-coach"></span>
+    <p>اساتید</p></a
+  >
+
+  <a
+    class="col column-sm center-sm middle-sm column-xs center-xs middle-xs"
+    [routerLink]="['/gymlist']"
+  >
+    <span class="icon-dumbbell"></span>
+    <p>باشگاه یاب</p></a
+  >
+</div>

@@ -1,0 +1,11 @@
+<div class="container" [ngClass]="{ violet: true }">
+  <ng-template #notArticleData>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="videoData; else notArticleData">
+    <div class="videoContainer" [innerHTML]="videoData.embed | safeHtml"></div>
+  </ng-container>
+</div>
+

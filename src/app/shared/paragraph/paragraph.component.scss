@@ -1,0 +1,10 @@
+.paragraph {
+  text-align: justify;
+  line-height: 3rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  /deep/ img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

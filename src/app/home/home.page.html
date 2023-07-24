@@ -1,0 +1,90 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #nothomeData>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="homeData; else nothomeData">
+    <app-search></app-search>
+    <div class="sliderContainer">
+      <!-- <owl-carousel-o
+        [options]="customOptions"
+        class="customSlider"
+        *ngIf="homeData"
+      >
+        <ng-container *ngFor="let slide of homeData?.advertise">
+          <ng-template carouselSlide [id]="slide.id">
+            <app-slider [data]="slide" class="advertise"></app-slider>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o> -->
+      <ion-slides class="imageSlider" [options]="slideOptsOne">
+        <ion-slide *ngFor="let slide of homeData?.advertise">
+          <app-slider [data]="slide" class="advertise"></app-slider>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="col-sm-16 middle-sm between-sm col-xs-16 middle-xs between-xs suggestContainer">
+      <a [routerLink]="['/routePath']" class="flex-col middle-sm center-sm middle-xs center-xs suggest"
+        [style.backgroundImage]="'url(' + suggestImage1 + ')'">
+        کاریابی ورزشی
+      </a>
+      <a [routerLink]="['/newspaperlist']" class="flex-col middle-sm center-sm middle-xs center-xs suggest"
+        [style.backgroundImage]="'url(' + suggestImage2 + ')'">
+        مجله رزم آور
+      </a>
+    </div>
+    <div class="sliderContainer">
+      <!-- <owl-carousel-o
+        [options]="customOptions"
+        class="customSlider"
+        *ngIf="homeData"
+      >
+        <ng-container *ngFor="let slide of homeData?.sliders">
+          <ng-template carouselSlide [id]="slide.id">
+            <app-slider [data]="slide"></app-slider>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o> -->
+      <ion-slides class="imageSlider" [options]="slideOptsOne">
+        <ion-slide *ngFor="let slide of homeData?.sliders">
+          <app-slider [data]="slide"></app-slider>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="col-sm-16 middle-sm between-sm col-xs-16 middle-xs between-xs suggestContainer">
+      <a [routerLink]="['/newslist']" class="flex-col middle-sm center-sm middle-xs center-xs suggest"
+        [style.backgroundImage]="'url(' + suggestImage3 + ')'">
+        اخبار ورزشی
+      </a>
+      <a [routerLink]="['/offline-videoslist']" class="flex-col middle-sm center-sm middle-xs center-xs suggest"
+        [style.backgroundImage]="'url(' + suggestImage4 + ')'">
+        ویدئو ها
+      </a>
+    </div>
+    <div class="popularContainer">
+      <a class="flex-col middle-sm center-sm middle-xs center-xs gymContainer"
+        [style.backgroundImage]="'url(' + suggestImage5 + ')'">
+        فروشگاه رزم آور
+      </a>
+    </div>
+    <div class="col-sm-16 middle-sm between-sm col-xs-16 middle-xs between-xs suggestContainer">
+      <a [routerLink]="['/gymlist']" class="flex-col middle-sm center-sm middle-xs center-xs suggest"
+        [style.backgroundImage]="'url(' + suggestImage6 + ')'">
+        باشگاه یاب
+      </a>
+      <a [routerLink]="['/coach-list']" class="flex-col middle-sm center-sm middle-xs center-xs suggest"
+        [style.backgroundImage]="'url(' + suggestImage7 + ')'">
+        اساتید رزمی
+      </a>
+    </div>
+    <div class="popularContainer">
+      <a [routerLink]="['/videolist']" class="flex-col middle-sm center-sm middle-xs center-xs gymContainer"
+        [style.backgroundImage]="'url(' + suggestImage8 + ')'">
+        پخش زنده
+      </a>
+    </div>
+
+  </ng-container>
+</div>

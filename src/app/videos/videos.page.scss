@@ -1,0 +1,14 @@
+@import './../../assets/abstract/headquarters';
+.lastVideosContainer {
+  .title {
+    padding: 1rem 0 2rem;
+    > img {
+      margin-left: -1rem;
+      width: 4rem;
+    }
+  }
+  .content {
+    padding: 0 0 2rem;
+    overflow-x: auto;
+  }
+}

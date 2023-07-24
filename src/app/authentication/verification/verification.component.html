@@ -1,0 +1,20 @@
+<div class="flex-col column-sm column-xs loginContainer">
+    <app-input
+      [placeholderValue]="'کد احراز هویت'"
+      [type]="'text'"
+      (mainValue)="getVerificationCode($event)"
+    ></app-input>
+    <app-button
+      (click)="checkVerificationCode()"
+      [btnTitle]="'تایید کد'"
+      [customClass]="'btn btn_red'"
+      *ngIf="loading"
+    ></app-button>
+    <div
+      class="flex-col center-sm middle-sm center-xs middle-xs forgetpassContainer"
+      *ngIf="!loading"
+    >
+      <ion-spinner name="dots"></ion-spinner>
+    </div>
+  </div>
+  

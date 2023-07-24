@@ -1,0 +1,113 @@
+@import './../abstract/headquarters';
+.header {
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  background-color: $red;
+  .logo {
+    height: 80%;
+    img {
+      height: 100%;
+    }
+  }
+  .menu,
+  .backArrow {
+    span {
+      font-size: 2rem;
+      color: $white;
+    }
+  }
+  .backArrow {
+    > a {
+      transform: rotate(180deg);
+      color: $white;
+    }
+  }
+}
+.menuContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 1000;
+  transition: 0.3s;
+  &.open {
+    right: 0;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    background-color: #340002;
+  }
+  .menu {
+    width: 25rem;
+    height: 95%;
+    background-color: $red;
+    position: absolute;
+    right: -100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-left-radius: $border_radius;
+    border-bottom-left-radius: $border_radius;
+    overflow: hidden;
+    color: $white;
+    transition: 0.4s;
+    &.open {
+      right: 0;
+    }
+    .menuHeader {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-color: $black;
+      border-radius: $border_radius;
+      background-blend-mode: multiply;
+      background-color: $red;
+      padding: 1rem;
+      .menuIcon {
+        color: $white;
+        padding: 1rem 0;
+        > span {
+          font-size: 2rem;
+        }
+      }
+      .menuUserDetails {
+        .userAvatar {
+          width: 5rem;
+          height: 5rem;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 1rem;
+        }
+        .userName {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .menuList {
+      padding: 1rem;
+      overflow-y: auto;
+      flex-grow: 1;
+      > ul {
+        > li {
+          a {
+            display: block;
+            padding: 1rem 0;
+            color: $white;
+          }
+        }
+      }
+    }
+    .menuLogo {
+      padding: 1rem;
+    }
+  }
+}

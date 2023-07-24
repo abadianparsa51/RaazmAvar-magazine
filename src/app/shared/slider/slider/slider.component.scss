@@ -1,0 +1,26 @@
+@import './../../../../assets/abstract/headquarters';
+:host {
+  width: 100%;
+}
+.sliderContainer {
+  background-position: center;
+  background-size: cover;
+  height: 22rem;
+  @include responsive('sm') {
+    height: 40rem;
+  }
+  .titles {
+    padding: 1rem;
+    color: $white;
+  }
+}
+:host {
+  &.advertise {
+    .sliderContainer {
+      height: 15rem;
+      @include responsive('sm') {
+        height: 20rem;
+      }
+    }
+  }
+}

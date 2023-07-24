@@ -1,0 +1,49 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <div class="flex-col middle-sm middle-xs center-sm center-xs profileImage">
+    <ng-container *ngIf="data?.image !== ''">
+      <!--div
+        class="image"
+        [style.backgroundImage]="'url(' + data?.image + ')'"
+      ></div-->
+    </ng-container>
+    <ng-container *ngIf="data?.image === ''">
+      <div
+        class="image"
+        [style.backgroundImage]="'url(url(assets/image/user02.png))'"
+      ></div>
+    </ng-container>
+  </div>
+  <div class="flex-col column-sm middle-sm column-xs middle-xs profileDetails">
+    <p>{{ data?.name }}</p>
+    <span class="icon-wallet walletIcon"></span>
+    <!--p>امتیاز : {{ data?.point }}</p-->
+    <p>اعتبار حساب : {{ data?.account_amount }}</p>
+    <div
+      class="flex-col middle-sm middle-xs center-sm center-xs addToWalletBtn"
+    >
+      افزایش اعتبار +
+    </div>
+  </div>
+  <div class="flex-col column-sm column-xs profileMenuContainer">
+    <a [routerLink]="'addgym'" class="flex-col middle-sm middle-xs items">
+      <span></span>
+      <p>افزودن باشگاه</p>
+    </a>
+    <a [routerLink]="'addcoach'" class="flex-col middle-sm middle-xs items">
+      <span></span>
+      <p>افزودن مربی</p>
+    </a>
+    <a [routerLink]="'fave'" class="flex-col middle-sm middle-xs items">
+      <span></span>
+      <p>لیست مورد علاقه ها</p>
+    </a>
+    <a [routerLink]="'messages'" class="flex-col middle-sm middle-xs items">
+      <span></span>
+      <p>پیام ها</p>
+    </a>
+    <a [routerLink]="'edit'" class="flex-col middle-sm middle-xs items">
+      <span></span>
+      <p>ویرایش پروفایل</p>
+    </a>
+  </div>
+</div>

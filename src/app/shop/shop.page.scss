@@ -1,0 +1,50 @@
+@import './../../assets/abstract/headquarters';
+
+.sliderContainer {
+    margin: 1rem auto;
+    border-radius: $border_radius;
+    overflow: hidden;
+}
+
+.filterContainer {
+    margin: 1rem auto;
+    border-radius: $border_radius;
+    height: 5rem;
+
+    .icon {
+        width: 10%;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+
+    .title {
+        padding: 0 1rem;
+    }
+
+    .selectbox {
+        width: 50%;
+
+        select {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            appearance: none;
+            text-align: center;
+        }
+    }
+}
+
+.gymlistContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categoriesContainer {
+    flex-wrap: nowrap;
+    margin-top: 1rem;
+    overflow-x: auto;
+}

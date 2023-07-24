@@ -1,0 +1,86 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+
+    <div class="flex-col middle-sm middle-xs  infoContainer ">
+      <div style="padding: 3rem 2rem 3rem 3rem;">
+        <div>
+          <span class="orderNum">
+            سفارش شماره 12313
+          </span>
+        </div>
+        <div class="address">
+          <span>
+            آدرس
+          </span>
+        </div>
+
+        <br>
+        <div class="addTitle">
+          <span>
+            میرداماد - خیابان پگاه - پلاک 2 - زنگ 1
+          </span>
+        </div>
+        <br>
+        <span class="day">
+          ساعت و روز تحویل
+        </span>
+        <br>
+        <span class="time ">
+          شنبه 12-11
+        </span>
+        <br>
+        <span class="date">
+          12/10/98
+        </span>
+        <br>
+        <span class="priceTitle">
+          مبلغ
+        </span>
+        <br>
+        <span class="price">
+          300.000 تومان
+        </span>
+      </div>
+    </div>
+
+    <div class="flex-col middle-sm middle-xs content featuresContainer">
+      <ng-container>
+        <div class="col-xs-8  box">
+          <div style="margin-top: 1.5rem;
+          width: 17rem;">
+            <span class="icon-sort-button-with-three-lines item3">
+              پرداخت در محل
+            </span>
+            <input type="radio" name="gender" value="male">
+          </div>
+        </div>
+        <div class="col-xs-8 box">
+          <div style="margin-top: 1.5rem;
+          width: 17rem;">
+            <span class="icon-sort-button-with-three-lines item3">
+              پرداخت آنلاین
+            </span>
+            <input type="radio" name="gender" value="male">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+  </ng-container>
+  <div class="popularContainer2 " style="position: fixed; bottom: 6rem;">
+    <a [routerLink]="['/shop-final']" style="width:100%;background-color: rgb(0, 188, 50);
+        height: 4.5rem;
+        width: 100%;
+        color: white;
+        border-radius: 1.5rem;" class="flex-col middle-sm center-sm middle-xs center-xs gymContainer">
+      اضافه کردن به سبد خرید
+    </a>
+  </div>
+</div>

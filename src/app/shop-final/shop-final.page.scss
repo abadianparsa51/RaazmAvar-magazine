@@ -1,0 +1,274 @@
+@import './../../assets/abstract/headquarters';
+
+.sliderContainer {
+    width: calc(100% + 2rem);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    left: 1rem;
+    margin-top: -3rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 10rem;
+        z-index: 2;
+    }
+
+    &::before {
+        top: 0;
+        background-image: linear-gradient(to bottom, $red, transparent);
+    }
+}
+
+.filterContainer {
+    margin: 1rem auto;
+    border-radius: $border_radius;
+    height: 5rem;
+    flex-wrap: wrap;
+
+    .filterItem {
+        width: 49%;
+
+        &:not(:nth-child(2n)) {
+            margin-left: 2%;
+        }
+    }
+
+    .icon {
+        width: 10%;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+
+    .title {
+        padding: 0 1rem;
+    }
+
+    .selectbox {
+        width: 10rem;
+        text-align: center;
+        background-color: white;
+        border-radius: 2.5rem;
+
+        select {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            appearance: none;
+            text-align: center;
+        }
+    }
+}
+
+
+
+.infoContainer {
+    padding: 1rem 0;
+    background-color: white;
+    border-radius: 2.5rem;
+    margin-bottom: 1.5rem;
+
+    .avatar {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .titles {
+        padding: 1rem;
+        flex: 1;
+
+        p {
+            margin-top: 1rem;
+        }
+    }
+
+    .faves {
+        width: 5rem;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.aboutContainer {
+    text-align: justify;
+    font-size: 1.5rem;
+}
+
+
+
+.featuresContainer {
+    margin: 1rem 0;
+    // flex-wrap: wrap;
+
+    .box {
+        background-color: white;
+        border-radius: 0.5rem;
+        min-width: 33%;
+        height: 5rem;
+        margin-left: 1rem;
+        text-align: center;
+    }
+
+    .titles {
+        padding: 0.8rem 2rem;
+        background-color: $red;
+        color: $white;
+        text-align: center;
+        border-radius: $border_radius;
+    }
+
+    .content {
+        margin-top: 1rem;
+
+        .items {
+            background-color: $white;
+            padding: 0.8rem 2rem;
+            border-radius: $border_radius;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+
+.pricingContainer {
+    margin: 1rem 0;
+
+    .basket {
+        padding: 0.8rem 2rem;
+        background-color: $green;
+        color: $white;
+        // border-radius: $border_radius;`
+    }
+
+    .titles {
+        padding: 0.8rem 2rem;
+        background-color: $red;
+        color: $white;
+        border-radius: $border_radius;
+    }
+
+
+
+    .content {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+
+        .cart {
+            background-color: $white;
+            border-radius: $border_radius;
+            overflow: hidden;
+            width: calc(50% - 0.5rem);
+            margin-bottom: 1rem;
+
+            .text {
+                padding: 2rem;
+            }
+
+            .btns {
+                padding: 1rem;
+                background-color: $green;
+                width: 100%;
+                color: $white;
+
+                span {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.mapContainer {
+    overflow: hidden;
+}
+
+.pos {
+    text-align: center;
+    padding: 2.5rem 0 2.5rem 0;
+}
+
+.popularContainer {
+    // width: 96%;
+
+    .title {
+        padding: 0 0 2rem;
+
+        >span {
+            margin-left: -1rem;
+            font-size: 3rem;
+            color: darken($color: $grayBG, $amount: 20);
+        }
+    }
+
+    .content {
+        padding: 0 0 2rem;
+        overflow-x: auto;
+    }
+}
+
+.popularContainer2 {
+    width: 96%;
+
+    .title {
+        padding: 0 0 2rem;
+
+        >span {
+            margin-left: -1rem;
+            font-size: 3rem;
+            color: darken($color: $grayBG, $amount: 20);
+        }
+    }
+
+    .content {
+        padding: 0 0 2rem;
+        overflow-x: auto;
+    }
+}
+
+.selectbox {
+    width: 10rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 2.5rem;
+
+    select {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        appearance: none;
+        text-align: center;
+    }
+}
+
+.orderNum {
+    font-size: 2rem;
+}
+
+.address {
+    padding-top: 1.5rem;
+    font-size: 1.3rem;
+    color: gray;
+}
+
+.addTitle {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+}

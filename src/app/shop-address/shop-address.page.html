@@ -1,0 +1,109 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+    <div class="flex-col middle-sm middle-xs infoContainer" style="padding-top: 1.5rem;">
+
+      <div class="col-xs-13">
+
+        <h6 style="padding-right: 1.25rem;">خونه</h6>
+        <br>
+        <p style="padding-top: 2rem;">
+          میرداماد - خیابان پگاه - پلاک 2 - زنگ 1
+        </p>
+      </div>
+      <div class="col-xs-3 ">
+        <input type="radio" name="gender" value="male">
+      </div>
+
+    </div>
+    <div class="flex-col middle-sm middle-xs infoContainer">
+
+      <div class="col-xs-13">
+
+        <h6 style="padding-right: 1.25rem;">شرکت</h6>
+        <br>
+        <p style="padding-top: 2rem;">
+          میرداماد - خیابان پگاه - پلاک 2 - زنگ 1
+        </p>
+      </div>
+      <div class="col-xs-3 ">
+        <input type="radio" name="gender" value="male">
+      </div>
+
+    </div>
+    <div class="popularContainer pos">
+      <div class="flex-col column-sm column-xs featuresContainer">
+        <div class="titles">
+          <span class="icon-sort-button-with-three-lines item3">
+            افزودن آدرس جدید
+          </span>
+        </div>
+      </div>
+
+
+      <div class="popularContainer pos">
+        <span class="icon-sort-button-with-three-lines item3">
+          روز و ساعت تحویل
+        </span>
+
+
+      </div>
+
+
+      <div class="flex-col middle-sm middle-xs content featuresContainer">
+        <div style="margin-left: 1.5rem;
+        text-align: center;">
+          <p>
+            شنبه:
+          </p>
+          <p>
+            12/10/98
+          </p>
+        </div>
+        <ng-container *ngFor="let data of datas.CoachList.relatedpopularStore">
+
+          <div class="box">
+            <div style="margin-top: 1.5rem;">
+              12 الی 15
+              <input type="radio" name="gender" value="male">
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="flex-col middle-sm middle-xs content featuresContainer">
+        <div style="margin-left: 1.5rem;
+          text-align: center;">
+          <p>
+            شنبه:
+          </p>
+          <p>
+            12/10/98
+          </p>
+        </div>
+        <ng-container *ngFor="let data of datas.CoachList.relatedpopularStore">
+          <div class="box">
+            <div style="margin-top: 1.5rem;">
+              12 الی 15
+              <input type="radio" name="gender" value="male">
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+  <div class="popularContainer2 " style="position: fixed; bottom: 6rem;">
+    <a [routerLink]="['/shop-add-address']" style="width:100%;background-color: rgb(0, 188, 50);
+        height: 4.5rem;
+        width: 100%;
+        color: white;
+        border-radius: 1.5rem;" class="flex-col middle-sm center-sm middle-xs center-xs gymContainer">
+      اضافه کردن به سبد خرید
+    </a>
+  </div>
+</div>

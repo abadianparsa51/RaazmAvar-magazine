@@ -1,0 +1,75 @@
+<div class="container" [ngClass]="{ gray: true }">
+    <ng-template #notGymList>
+        <div class="flex-col center-md middle-md loader">
+            <div class="flex-col center-md middle-md load"></div>
+        </div>
+    </ng-template>
+    <ng-container *ngIf="newspaperlist; else notGymList">
+        <app-search></app-search>
+        <div (scroll)="onScroll($event)" class="flex-col start-sm between-xs gymlistContainer">
+            <ng-container *ngFor="let data of newspaperlist">
+                <div class="flex-col column-sm column-xs newsCardContainer" (click)="openPDF(data.selector, data.after_discount)">
+                    <div class="cover" [style.backgroundImage]="'url(' + data.cover + ')'"></div>
+                    <div class="flex-col around-sm around-xs content">
+                        <div class="title">
+                            <p>{{ data.title }}</p>
+                        </div>
+                        <div class="subtitle">
+                            <p>{{ data.date }}</p>
+                        </div>
+                    </div>
+                    <div class="flex-col around-sm around-xs content">
+                        <div class="subtitle" *ngIf="data.buy == false">
+                            <p *ngIf="data.after_discount < data.price || data.price == 0" class="liner">قیمت {{ data.price }} تومان</p>
+                        </div>
+                    </div>
+                    <div class="priceButton">
+                        <ng-container *ngIf="data.buy == false">
+                            <p *ngIf="data.after_discount > 0" (click)="payment(data.buy_link)">{{ data.after_discount }} تومان</p>
+                            <p *ngIf="data.after_discount == 0">رایگان</p>
+                        </ng-container>
+                        <ng-container *ngIf="data.buy == true">
+                            <p>خریداری شده</p>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="mainPdfContainer" [ngClass]="{ open: openMapVal }">
+            <!--div class="image-holder-zoom">
+                <img (pinch)="zoomer($event)" [ngStyle]="{'width': zoomWidth, 'height': zoomHeight}" src="{{fullSizeUrl}}" alt="">
+            </div-->
+            <div class="flex-col middle-sm end-sm middle-xs end-xs pdfheader">
+                <div class="col-sm-2 col-xs-2">
+                    <span class="icon-right-arrow" (click)="closePDF()"></span>
+                </div>
+            </div>
+            <div class="flex-col center-sm middle-sm center-xs middle-xs pdfContainer">
+                <ng-container *ngIf="pdfDatas">
+                    <ion-slides class="imageSlider" #nespaperSlide>
+                        <ion-slide class="imageContainer" *ngFor="let item of pdfDatas.PDFs;let i = index"
+                                   id="pager-{{i}}">
+                            <div class="imgslide">
+                                <pinch-zoom>
+                                    <img (click)="stopSwipe($event)" (pinch)="zoomer($event)" src="{{ item.url }}" class="thumbImg"/>
+                                </pinch-zoom>
+                            </div>
+                        </ion-slide>
+                    </ion-slides>
+                    <select (change)="onSelectPage($event.target.value)" class="selectBox paginate">
+                        <option value="0">انتخاب صفحه</option>
+                        <option *ngFor="let item of pdfDatas.PDFs;let i = index" value="{{ i }}">{{ i + 1 }}</option>
+                    </select>
+                </ng-container>
+                <!-- loader -->
+                <ng-container *ngIf="!pdfDatas">
+                    <ion-spinner name="dots"></ion-spinner>
+                </ng-container>
+                <!-- loader -->
+            </div>
+            <div class="flex-col center-sm middle-sm center-xs middle-xs" *ngIf="pdfDatas">
+                <h4>{{totalPage}}</h4>
+            </div>
+        </div>
+    </ng-container>
+</div>

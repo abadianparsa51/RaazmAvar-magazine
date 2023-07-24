@@ -1,0 +1,91 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+    <div class="sliderContainer">
+      <!-- <owl-carousel-o
+        [options]="customOptions"
+        class="customSlider"
+        *ngIf="datas"
+      >
+        <ng-container *ngFor="let slide of datas">
+          <ng-template carouselSlide>
+            <app-cover-slider [data]="slide"></app-cover-slider>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o> -->
+      <ion-slides class="imageSlider" [options]="slideOptsOne">
+        <ion-slide *ngFor="let slide of datas.GymsList.coachImages">
+          <app-cover-slider [data]="slide"></app-cover-slider>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="flex-col middle-sm middle-xs infoContainer">
+      <div
+        class="flex-col middle-sm middle-xs center-sm center-xs avatar"
+        [style.backgroundImage]="
+          'url(' + datas.GymsList.coachDetails.image + ')'
+        "
+      ></div>
+      <div class="flex-col column-sm column-xs center-sm center-xs titles">
+        <h6>{{ datas.GymsList.coachDetails.title }}</h6>
+        <p>{{ datas.GymsList.coachDetails.address }}</p>
+      </div>
+      <div class="flex-col middle-sm middle-xs around-sm around-xs faves">
+      </div>
+    </div>
+    <div class="aboutContainer">
+      <p>{{ datas.GymsList.coachDetails.description }}</p>
+    </div>
+    <div class="flex-col column-sm column-xs featuresContainer">
+      <div class="titles">امکانات باشگاه</div>
+      <div class="content">
+        <ng-container *ngFor="let item of datas.GymsList.skills">
+          <div class="flex-col between-sm between-xs items">
+            <div class="title">{{ item.title }}</div>
+            <div class="value">{{ item.value }}</div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mapContainer">
+      <div style="height: 300px;" leaflet [leafletOptions]="options" [leafletLayers]="layers" ></div>
+    </div>
+    <div class="flex-col column-sm column-xs pricingContainer">
+      <div class="titles">هزینه باشگاه</div>
+      <div class="flex-col between-sm between-xs content">
+        <ng-container *ngFor="let item of datas.GymsList.prices">
+          <div
+            class="flex-col column-sm middle-sm center-sm column-xs middle-xs center-xs cart"
+          >
+            <div class="text">
+              <p>{{ item.title }}</p>
+              <p class="small">{{ item.day }}</p>
+              <h6>{{ item.price }}</h6>
+            </div>
+            <div class="flex-col middle-sm middle-xs around-sm around-xs btns">
+              <span class="icon-wallet"></span>
+              <p>پرداخت هزینه</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="popularContainer">
+      <div class="flex-col middle-sm center-sm middle-xs center-xs title">
+        <span class="icon-dumbbell"></span>
+        <p>باشگاه های برتر</p>
+      </div>
+      <div class="flex-col middle-sm middle-xs content">
+        <ng-container *ngFor="let data of datas.GymsList.relatedpopularStore">
+          <app-popular-card [data]="data"></app-popular-card>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

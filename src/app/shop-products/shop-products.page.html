@@ -1,0 +1,163 @@
+<div class="container" [ngClass]="{ gray: true }">
+    <ng-template #notGymList>
+        <div class="flex-col center-md middle-md loader">
+            <div class="flex-col center-md middle-md load"></div>
+        </div>
+    </ng-template>
+
+    <ng-container *ngIf="datas; else notGymList">
+        <app-search></app-search>
+
+        <ng-container *ngIf=" datas; else notGymList">
+            <!-- <app-search></app-search>
+            <div class="flex-col between-sm between-xs categoriesContainer">
+                <ng-container *ngFor="let data of datas.CoachList.categories">
+
+                </ng-container>
+            </div> -->
+
+            <div class="flex-col  gymlistContainer item">
+                <ng-container>
+                    <div class="col-xs-6 flex-start ">
+                        <img src="./../../assets/image/iredvs9v.png" class="img ">
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="subiscribe">
+                            <P class="subtitle">
+                                دستکش بوکس مارک ایکس
+                            </P>
+                            <P class="sub">
+                                3.800.000 تومان
+                            </P>
+                            <div class="col flex-warp filterContainer">
+                                <div class="col filterItem ">
+                                    <div class="title"><label for="sort">تعداد:</label></div>
+                                    <div class="selectbox" style="background-color: white;">
+                                        <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                                            <option value="1">امتیاز کاربران</option>
+                                            <option value="2">پر بازدید ها</option>
+                                            <option value="3">گرانترین</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="icon-sort-button-with-three-lines item3"></span>
+                    </div>
+
+                </ng-container>
+            </div>
+            <div class="flex-col  gymlistContainer item">
+                <ng-container>
+                    <div class="col-xs-6 flex-start ">
+                        <img src="./../../assets/image/iredvs9v.png" class="img ">
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="subiscribe">
+                            <P class="subtitle">
+                                دستکش بوکس مارک ایکس
+                            </P>
+                            <P class="sub">
+                                3.800.000 تومان
+                            </P>
+                            <div class="col flex-warp filterContainer">
+                                <div class="col filterItem ">
+                                    <div class="title"><label for="sort">تعداد:</label></div>
+                                    <div class="selectbox" style="background-color: white;">
+                                        <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                                            <option value="1">امتیاز کاربران</option>
+                                            <option value="2">پر بازدید ها</option>
+                                            <option value="3">گرانترین</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="icon-sort-button-with-three-lines item3"></span>
+                    </div>
+
+                </ng-container>
+            </div>
+            <div class="flex-col  gymlistContainer item">
+                <ng-container>
+                    <div class="col-xs-6 flex-start ">
+                        <img src="./../../assets/image/iredvs9v.png" class="img ">
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="subiscribe">
+                            <P class="subtitle">
+                                دستکش بوکس مارک ایکس
+                            </P>
+                            <P class="sub">
+                                3.800.000 تومان
+                            </P>
+                            <div class="col flex-warp filterContainer">
+                                <div class="col filterItem ">
+                                    <div class="title"><label for="sort">تعداد:</label></div>
+                                    <div class="selectbox" style="background-color: white;">
+                                        <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                                            <option value="1">امتیاز کاربران</option>
+                                            <option value="2">پر بازدید ها</option>
+                                            <option value="3">گرانترین</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="icon-sort-button-with-three-lines item3"></span>
+                    </div>
+
+                </ng-container>
+            </div>
+            <div class="flex-col  gymlistContainer item">
+                <ng-container>
+                    <div class="col-xs-6 flex-start ">
+                        <img src="./../../assets/image/iredvs9v.png" class="img ">
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="subiscribe">
+                            <P class="subtitle">
+                                دستکش بوکس مارک ایکس
+                            </P>
+                            <P class="sub">
+                                3.800.000 تومان
+                            </P>
+                            <div class="col flex-warp filterContainer">
+                                <div class="col filterItem ">
+                                    <div class="title"><label for="sort">تعداد:</label></div>
+                                    <div class="selectbox" style="background-color: white;">
+                                        <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                                            <option value="1">امتیاز کاربران</option>
+                                            <option value="2">پر بازدید ها</option>
+                                            <option value="3">گرانترین</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="icon-sort-button-with-three-lines item3"></span>
+                    </div>
+
+                </ng-container>
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <div class="popularContainer " style="align-self: flex-end;">
+        <a [routerLink]="['/shop-address']" style="width:100%;background-color: rgb(0, 188, 50);
+          height: 4.5rem;
+          width: 100%;
+          color: white;
+          border-radius: 1.5rem;" class="flex-col middle-sm center-sm middle-xs center-xs gymContainer">
+            اضافه کردن به سبد خرید
+        </a>
+    </div>
+</div>

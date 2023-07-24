@@ -1,0 +1,53 @@
+/*
+* DEFAULT VALUES
+*/
+$rem_default: 62.5%;
+$rem_value: 1rem;
+$max_width_value: 120rem;
+$border_radius: 1rem;
+
+/* 
+* BASE COLORS 
+*/
+$white: #ffffff;
+$black: #000000;
+$red: #ea2128;
+$green: #00bc32;
+$violet: #2a2e43;
+$grayBG: #e6e6e6;
+$silver:#CCCCCC;
+
+$icomoon-font-family: 'icomoon' !default;
+$icomoon-font-path: '../assets/icon' !default;
+
+$icon-cancel: "\e91d";
+$icon-login: "\e91e";
+$icon-maps-and-flags: "\e912";
+$icon-next: "\e913";
+$icon-sort-button-with-three-lines: "\e914";
+$icon-user-path1: "\e915";
+$icon-user-path2: "\e916";
+$icon-user-path3: "\e917";
+$icon-user-path4: "\e918";
+$icon-user-path5: "\e919";
+$icon-user-path6: "\e91a";
+$icon-user-path7: "\e91b";
+$icon-wallet: "\e91c";
+$icon-coach: "\e900";
+$icon-dumbbell: "\e901";
+$icon-heart-outline: "\e902";
+$icon-menu: "\e903";
+$icon-play-button: "\e904";
+$icon-right-arrow: "\e905";
+$icon-share1: "\e906";
+$icon-speaker: "\e907";
+$icon-valentines-heart: "\e908";
+$icon-video: "\e909";
+$icon-warning1-path1: "\e90a";
+$icon-warning1-path2: "\e90b";
+$icon-warning1-path3: "\e90c";
+$icon-warning1-path4: "\e90d";
+$icon-warning1-path5: "\e90e";
+$icon-warning1-path6: "\e90f";
+$icon-warning1-path7: "\e910";
+$icon-warning1-path8: "\e911";

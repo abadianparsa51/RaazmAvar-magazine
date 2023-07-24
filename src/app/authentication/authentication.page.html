@@ -1,0 +1,22 @@
+<div class="container" [ngClass]="{ violet: true }">
+  <div class="flex-col center-sm middle-sm center-xs middle-xs authHeader">
+    <span class="icon-login"></span>
+  </div>
+  <div class="flex-col center-sm middle-sm center-xs middle-xs authNav">
+    <ng-container *ngIf="isVerification()">
+      <a
+        class="col-sm-8 center-sm middle-sm center-xs middle-xs col-xs-8"
+        [routerLink]="['/authentication/login']"
+        routerLinkActive="active"
+        >ورود</a
+      >
+      <a
+        class="col-sm-8 center-sm middle-sm center-xs middle-xs col-xs-8"
+        [routerLink]="['/authentication/signup']"
+        routerLinkActive="active"
+        >ثبت نام</a
+      >
+    </ng-container>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,17 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+    <app-search></app-search>
+    <!--div class="flex-col middle-sm middle-xs filterContainer">
+      <div class="flex-col middle-sm middle-xs flex-col center-sm center-xs icon">
+        <span class="icon-sort-button-with-three-lines"></span>
+      </div>
+    </div-->
+    <ng-container *ngFor="let data of favorites" class="example-item" style="margin:5px;">
+      <app-news-card [data]="data"></app-news-card>
+    </ng-container>
+</div>

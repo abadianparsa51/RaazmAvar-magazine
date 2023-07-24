@@ -1,0 +1,43 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="videosStore; else notGymList">
+    <app-search></app-search>
+    <div class="flex-col between-sm between-xs categoriesContainer">
+      <ng-container *ngFor="let data of categories">
+        <app-category-card [data]="data"></app-category-card>
+      </ng-container>
+    </div>
+    <div class="flex-col between-sm between-xs categoryContainer">
+      <label class="flex-col center-sm center-xs middle-sm middle-xs categoryCard active">
+        <p>همه</p>
+        <input type="radio" name="category" (change)="checked('')" />
+        <div class="bg"></div>
+      </label>
+      <label class="flex-col center-sm center-xs middle-sm middle-xs categoryCard active">
+        <p>در انتظار پخش</p>
+        <input type="radio" name="category" (change)="checked('waiting')" />
+        <div class="bg"></div>
+      </label>
+      <label class="flex-col center-sm center-xs middle-sm middle-xs categoryCard">
+        <p>در حال پخش</p>
+        <input type="radio" name="category" (change)="checked('online')" />
+        <div class="bg"></div>
+      </label>
+      <label class="flex-col center-sm center-xs middle-sm middle-xs categoryCard">
+        <p>آرشیو برنامه ها</p>
+        <input type="radio" name="category" (change)="checked('finished')" />
+        <div class="bg"></div>
+      </label>
+    </div>
+    <div (scroll)="onScroll($event)" class="flex-col between-sm between-xs videoslistContainer">
+      <ng-container *ngFor="let data of videosStore|filter: filterVal">
+        <app-video-card [data]="data"></app-video-card>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

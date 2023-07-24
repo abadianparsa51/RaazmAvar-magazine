@@ -1,0 +1,32 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+    <div class="flex-col between-sm between-xs categoriesContainer">
+      <ng-container *ngFor="let data of datas.CoachList.categories">
+        <app-category-card [data]="data" (change)="checked(data.query)"></app-category-card>
+      </ng-container>
+    </div>
+    <div class="flex-col middle-sm middle-xs filterContainer between-xs ">
+      <div class="col flex-start ">
+        <app-buttons [btnTitle]="bestSellersTitleBtnName" [customClass]="bestSellersCustomClass"
+          [btnURL]="bestSellersURLLink"></app-buttons>
+      </div>
+      <div class="col center-xs">
+        <app-buttons [btnTitle]="newestTitleBtnName" [customClass]="newestCustomClass"></app-buttons>
+      </div>
+      <div class="col flex-end">
+        <app-buttons [btnTitle]="mostViewedTitleBtnName" [customClass]="mostViewedCustomClass"></app-buttons>
+      </div>
+    </div>
+    <div class="flex-col between-sm between-xs gymlistContainer">
+      <ng-container *ngFor="let data of datas.shop-page.popularStore | filter: filterVal">
+        <app-shop-cards [data]="data" class="listCard"></app-shop-cards>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

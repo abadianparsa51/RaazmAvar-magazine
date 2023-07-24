@@ -1,0 +1,38 @@
+<ng-container *ngIf="data.target === 'in'">
+  <a [owlRouterLink]="[data.link]">
+    <div
+      class="flex-col end-sm end-xs sliderContainer"
+      [style.backgroundImage]="'url(' + data.image + ')'"
+    >
+      <div
+        class="col-sm-12 column-sm bottom-sm center-sm column-xs bottom-xs center-xs titles"
+      >
+        <div class="title">
+          <h4>{{ data.title }}</h4>
+        </div>
+        <div class="subTitle">
+          <p>{{ data.subtitle }}</p>
+        </div>
+      </div>
+    </div>
+  </a>
+</ng-container>
+<ng-container *ngIf="data.target === 'out'">
+  <a [href]="[data.link]">
+    <div
+      class="flex-col end-sm end-xs sliderContainer"
+      [style.backgroundImage]="'url(' + data.image + ')'"
+    >
+      <div
+        class="col-sm-12 column-sm bottom-sm center-sm column-xs bottom-xs center-xs titles"
+      >
+        <div class="title">
+          <h4>{{ data.title }}</h4>
+        </div>
+        <div class="subTitle">
+          <p>{{ data.subtitle }}</p>
+        </div>
+      </div>
+    </div>
+  </a>
+</ng-container>

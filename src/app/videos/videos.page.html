@@ -1,0 +1,22 @@
+<div class="container" [ngClass]="{ violet: true }">
+  <ng-template #notArticleData>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="articleData; else notArticleData">
+    <app-video-cover [data]="articleData.coverData"></app-video-cover>
+    <app-video [data]="articleData.video"></app-video>
+    <div class="lastVideosContainer">
+      <div class="flex-col middle-sm center-sm middle-xs center-xs title">
+        <img src="/assets/image/031-video-camera.svg" alt="" />
+        <p>ویئو های مرتبط</p>
+      </div>
+      <div (scroll)="onScroll($event)" class="flex-col middle-sm middle-xs content">
+        <ng-container *ngFor="let data of articleData.relatedVideos">
+          <app-last-card [data]="data"></app-last-card>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

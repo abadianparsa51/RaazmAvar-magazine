@@ -1,0 +1,60 @@
+@import './../../../assets/abstract/headquarters';
+:host {
+  width: 100%;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+.videoContainer {
+  width: 100%;
+  position: relative;
+  background-color: $white;
+  padding: 1rem;
+  border-radius: $border_radius;
+  .titlesContainer {
+    height: 100%;
+    width: calc(100% - 5rem);
+    padding-right: 1rem;
+    .date {
+      font-size: 1rem;
+    }
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .status {
+      .icon {
+        width: 1rem;
+        height: 1rem;
+        margin-left: 1rem;
+        border-radius: 50%;
+        &.yellow {
+          background-color: #ffd500;
+        }
+        &.red {
+          background-color: #df0e0e;
+        }
+        &.green {
+          background-color: #0bbf04;
+        }
+      }
+    }
+    .detail {
+      .btn {
+        background-color: $green;
+        color: $white;
+        margin-top: 1rem;
+        padding: .5rem 3rem;
+        border-radius: $border_radius * 3;
+      }
+    }
+  }
+  .imageContainer {
+    border-radius: $border_radius;
+    width: 13rem;
+    height: 11rem;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 0px 5px 0px darken($color: $grayBG, $amount: 70);
+  }
+}

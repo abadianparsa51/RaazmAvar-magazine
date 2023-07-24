@@ -1,0 +1,75 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+    <div class="sliderContainer">
+      <ion-slides class="imageSlider" [options]="slideOptsOne">
+        <ion-slide *ngFor="let slide of datas.CoachList.coachImages">
+          <app-cover-slider [data]="slide"></app-cover-slider>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="flex-col middle-sm middle-xs infoContainer">
+      <div class="flex-col middle-sm middle-xs center-sm center-xs avatar" [style.backgroundImage]="
+          'url(' + datas.CoachList.coachDetails.image + ')'
+        "></div>
+      <div class="flex-col column-sm column-xs center-sm center-xs titles">
+        <h6>{{ datas.CoachList.coachDetails.title }}</h6>
+        <p>{{ datas.CoachList.coachDetails.address }}</p>
+      </div>
+      <div class="flex-col middle-sm middle-xs around-sm around-xs faves">
+      </div>
+    </div>
+    <div class="aboutContainer">
+      <p>{{ datas.CoachList.coachDetails.description }}</p>
+    </div>
+    <div class="flex-col column-sm column-xs featuresContainer">
+      <div class="titles">تخصص های مربی</div>
+      <div class="content">
+        <ng-container *ngFor="let item of datas.CoachList.skills">
+          <div class="flex-col between-sm between-xs items">
+            <div class="title">{{ item.title }}</div>
+            <div class="value">{{ item.value }}</div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mapContainer">
+      <div style="height: 300px;" leaflet [leafletOptions]="options" [leafletLayers]="layers"></div>
+    </div>
+    <div class="flex-col column-sm column-xs pricingContainer">
+      <div class="titles">هزینه دوره ها</div>
+      <div class="flex-col between-sm between-xs content">
+        <ng-container *ngFor="let item of datas.CoachList.prices">
+          <div class="flex-col column-sm middle-sm center-sm column-xs middle-xs center-xs cart">
+            <div class="text">
+              <p>{{ item.title }}</p>
+              <p class="small">{{ item.day }}</p>
+              <h6>{{ item.price }}</h6>
+            </div>
+            <div class="flex-col middle-sm middle-xs around-sm around-xs btns">
+              <span class="icon-wallet"></span>
+              <p>پرداخت هزینه</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="popularContainer">
+      <div class="flex-col middle-sm center-sm middle-xs center-xs title">
+        <span class="icon-dumbbell"></span>
+        <p>مربی های برتر</p>
+      </div>
+      <div class="flex-col middle-sm middle-xs content">
+        <ng-container *ngFor="let data of datas.CoachList.relatedpopularStore">
+          <app-popular-card [data]="data"></app-popular-card>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

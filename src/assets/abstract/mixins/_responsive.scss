@@ -1,0 +1,31 @@
+/* responsive mixin 
+
+  @params (breakpoint , screen-size)
+
+  breakpoint => {
+    0 - 600 = phone
+    600 - 1200 = tablet
+    1200 - 1900 = desktop
+    1900 - 2500 = fullHD
+    2500 - 4000 = retina 4K
+    4000 - infinity = retina 5K
+  }
+
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint== '' {
+    @content;
+  }
+  @if $breakpoint== 'xs' {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint== 'sm' {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+}

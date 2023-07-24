@@ -1,0 +1,36 @@
+@import './../../assets/abstract/headquarters';
+.authHeader {
+  width: calc(100% + 2rem);
+  height: 20rem;
+  position: relative;
+  left: 1rem;
+  background-image: linear-gradient(to bottom, $red, transparent);
+  span {
+    &[class^='icon'] {
+      font-size: 8rem;
+    }
+  }
+}
+.authNav {
+  a {
+    position: relative;
+    padding: 1rem;
+    font-size: 1.4rem;
+    opacity: .5;
+    &.active {
+      opacity: 1;
+    }
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -0.25rem;
+        transform: translateY(-50%);
+        width: 0.2rem;
+        height: 70%;
+        background-color: $white;
+      }
+    }
+  }
+}

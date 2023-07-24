@@ -1,0 +1,38 @@
+<div
+  class="flex-col middle-sm center-sm middle-xs center-xs searchBoxContainer"
+  [style.backgroundImage]="'url(assets/image/map.png)'"
+  (click)="openMap()"
+  *ngIf="checkCoach() || checkAddCoach() || checkGym() || checkAddGym();"
+>
+  جستجو از روی نقشه
+</div>
+<div class="showOnMapContainer" [ngClass]="{ open: openMapVal }">
+  <div class="flex-col middle-sm end-sm middle-xs end-xs mapheader">
+    <div class="col-sm-2 col-xs-2">
+      <span class="icon-right-arrow" (click)="openMap()"></span>
+    </div>
+  </div>
+  <div class="mapContainer">
+    <div
+      style="height: 100vh;"
+      leaflet
+      [leafletOptions]="options"
+      [leafletLayers]="markers"
+      (leafletClick) = "addMarker($event)"
+    ></div>
+  </div>
+  <div
+    class="flex-col middle-sm middle-xs cardContainer"
+    [ngClass]="{ open: openMapPopup }"
+  >
+    <div
+      class="flex-col middle-sm middle-xs center-sm center-xs avatar"
+      [style.backgroundImage]="'url(assets/image/oxygen.png)'"
+    ></div>
+    <div class="flex-col column-sm column-xs center-sm center-xs titles">
+      <h6>باشگاه اکسیژن</h6>
+      <p>فرمانیه - اندرزگو</p>
+    </div>
+    <div class="flex-col middle-sm middle-xs around-sm around-xs faves"></div>
+  </div>
+</div>

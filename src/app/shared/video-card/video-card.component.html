@@ -1,0 +1,48 @@
+<a class="col-sm-16 middle-sm col-xs-16 middle-xs videoContainer" [ngClass]="{ reverse: index % 2 === 0 }"
+  [routerLink]="[data.link]">
+  <div class="flex-col imageContainer" [style.backgroundImage]="'url(' + data.image + ')'"></div>
+  <div class="flex-col column-sm column-xs titlesContainer">
+    <p class="date">{{ data.date }}</p>
+    <p class="title">{{ data.title }}</p>
+    <p class="subTitle">
+      {{ data.subtitle }}
+    </p>
+    <ng-container *ngIf="data.type === '1'">
+      <div class="flex-col middle-sm middle-xs status">
+        <div class="icon yellow"></div>
+        <div class="text">در انتظار پخش</div>
+      </div>
+      <div class="flex-col middle-sm middle-xs detail">
+        <div class="text">مانده تا شروع برنامه : 4:25:33</div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="data.type === '2'">
+      <div class="flex-col middle-sm middle-xs status">
+        <div class="icon red"></div>
+        <div class="text">اتمام مسابقه</div>
+      </div>
+      <div class="flex-col middle-sm center-sm middle-xs center-xs detail">
+        <div class="btn">
+          <a [routerLink]="['/video-frame']" style="color: white;"
+            class="flex-col middle-sm center-sm middle-xs center-xs gymContainer">
+            مشاهده از آرشیو
+          </a>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="data.type === '3'">
+      <div class="flex-col middle-sm middle-xs status">
+        <div class="icon green"></div>
+        <div class="text">در حال پخش</div>
+      </div>
+      <div class="flex-col middle-sm center-sm middle-xs center-xs detail">
+        <div class="btn">
+          <a [routerLink]="['/video-frame']" style="color: white;"
+            class="flex-col middle-sm center-sm middle-xs center-xs gymContainer">
+            مشاهده
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</a>

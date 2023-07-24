@@ -1,0 +1,53 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+    <div class="sliderContainer">
+      <!-- <owl-carousel-o
+        [options]="customOptions"
+        class="customSlider"
+        *ngIf="datas"
+      >
+        <ng-container *ngFor="let slide of datas.CoachList.advertise">
+          <ng-template carouselSlide>
+            <app-slider [data]="slide" class="advertise"></app-slider>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o> -->
+      <ion-slides class="imageSlider" [options]="slideOptsOne">
+        <ion-slide *ngFor="let slide of datas.CoachList.advertise">
+          <app-slider [data]="slide" class="advertise"></app-slider>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <app-search-map></app-search-map>
+    <div class="flex-col between-sm between-xs categoriesContainer">
+      <ng-container *ngFor="let data of categories">
+        <app-category-card [data]="data" (change)="checked(data.query)"></app-category-card>
+      </ng-container>
+    </div>
+    <div class="flex-col middle-sm middle-xs filterContainer">
+      <div class="flex-col middle-sm middle-xs flex-col center-sm center-xs icon">
+        <span class="icon-sort-button-with-three-lines"></span>
+      </div>
+      <div class="title"><label for="sort">مرتب سازی :</label></div>
+      <div class="selectbox">
+        <select name="sort" id="sort">
+          <option value="1">امتیاز کاربران</option>
+          <option value="2">پر بازدید ها</option>
+          <option value="3">گرانترین</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex-col between-sm between-xs gymlistContainer">
+      <ng-container *ngFor="let data of datas.CoachList.popularStore | filter: filterVal">
+        <app-popular-card [data]="data" class="listCard"></app-popular-card>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

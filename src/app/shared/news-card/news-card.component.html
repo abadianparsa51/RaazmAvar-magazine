@@ -1,0 +1,18 @@
+<a class="col-sm-16 middle-sm col-xs-16 middle-xs newsContainer" [ngClass]="{ reverse: index % 2 === 0 }"
+   [routerLink]="[data.link]">
+    <div *ngIf="showSubtitel" class="flex-col imageContainer" [style.backgroundImage]="'url(' + data.image + ')'"></div>
+    <div *ngIf="!showSubtitel" class="flex-col videoContainer" [style.backgroundImage]="'url(' + data.image + ')'">
+        <p class="timer">{{ data.time }}</p>
+    </div>
+    <div class="flex-col column-sm column-xs titlesContainer">
+        <!--p class="date">{{ data.date }}</p-->
+        <p class="title">{{ data.title }}</p>
+        <div class="holder-view">
+            <p class="view" *ngIf="!showSubtitel" style="padding-top:10px;">تعداد بازدید : {{data.views}}</p>
+            <p class="view padd">{{data.date}}</p>
+        </div>
+        <p class="subTitle" *ngIf="showSubtitel">
+            {{ data.subtitle }}
+        </p>
+    </div>
+</a>

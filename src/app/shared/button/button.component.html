@@ -1,0 +1,9 @@
+<a
+  [ngClass]="{
+    'flex-col middle-sm center-sm middle-xs center-xs': icon !== ''
+  }"
+  class="{{ customClass }}"
+  ><ng-container *ngIf="icon !== ''">
+    <span class="{{ icon }}"></span> </ng-container
+  >{{ btnTitle }}</a
+>

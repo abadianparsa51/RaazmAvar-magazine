@@ -1,0 +1,48 @@
+<div class="flex-col column-sm column-xs loginContainer">
+  <app-input
+    [placeholderValue]="'شماره موبایل'"
+    [type]="'mobile'"
+    (mainValue)="getMobile($event)"
+  ></app-input>
+  <app-input
+    [placeholderValue]="'نام و نام خانوادگی'"
+    [type]="'text'"
+    (mainValue)="getFullname($event)"
+  ></app-input>
+  <div class="flex-col middle-sm mainCheckboxContainer">
+    <div class="flex-col middle-sm middle-xs title">جنسیت :</div>
+    <label class="checkboxContainer" (click)="setGender(1)"
+      >مرد
+      <input type="radio" name="radio" />
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer" (click)="setGender(0)"
+      >زن
+      <input type="radio" name="radio" />
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+  <app-input
+    [placeholderValue]="'کلمه عبور'"
+    [type]="'password'"
+    (mainValue)="getPassword($event)"
+  ></app-input>
+  <app-input
+    [placeholderValue]="'تکرار کلمه عبور'"
+    [type]="'password'"
+    (mainValue)="getConfirmPassword($event)"
+  ></app-input>
+  <app-button
+    [btnTitle]="'ثبت نام'"
+    [customClass]="'btn btn_red'"
+    (click)="signUpUser()"
+    *ngIf="!loading"
+  ></app-button>
+  <div
+    class="flex-col center-sm middle-sm center-xs middle-xs forgetpassContainer"
+    *ngIf="loading"
+  >
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</div>

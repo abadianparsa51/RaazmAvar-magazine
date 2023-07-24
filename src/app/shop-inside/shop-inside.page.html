@@ -1,0 +1,143 @@
+<div class="container" [ngClass]="{ gray: true }">
+  <ng-template #notGymList>
+    <div class="flex-col center-md middle-md loader">
+      <div class="flex-col center-md middle-md load"></div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="datas; else notGymList">
+    <app-search></app-search>
+
+    <div class="sliderContainer">
+      <ion-slides class="imageSlider" [options]="slideOptsOne">
+        <ion-slide *ngFor="let slide of datas.CoachList.coachImages">
+          <app-cover-slider [data]="slide"></app-cover-slider>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="flex-col middle-sm middle-xs infoContainer">
+
+      <div class="flex-col column-sm column-xs center-sm center-xs titles">
+
+        <h6>لباس کاراته آدیداس رسمی مسابقات</h6>
+        <p>برند آدیداس</p>
+      </div>
+      <div class="flex-col middle-sm middle-xs around-sm around-xs faves">
+      </div>
+    </div>
+
+    <div class="flex-warp column-sm column-xs featuresContainer">
+
+      <div class="content">
+        <ng-container class="flex-col middle-sm middle-xs filterContainer">
+
+          <div>
+            <div class="col flex-warp filterContainer">
+              <div class="col filterItem ">
+                <div class="title"><label for="sort">مرتب سازی :</label></div>
+                <div class="selectbox" style="background-color: white;">
+                  <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                    <option value="1">امتیاز کاربران</option>
+                    <option value="2">پر بازدید ها</option>
+                    <option value="3">گرانترین</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col filterItem  ">
+                <div class="title"><label for="sort">مرتب سازی :</label></div>
+                <div class="selectbox" style="background-color: white;">
+                  <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                    <option value="1">امتیاز کاربران</option>
+                    <option value="2">پر بازدید ها</option>
+                    <option value="3">گرانترین</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col filterItem  " style="padding-top: 2rem;">
+                <div class=" title"><label for="sort">مرتب سازی :</label></div>
+                <div class="selectbox" style="background-color: white;">
+                  <select name="sort" id="sort" style="padding-right: 1.2rem;">
+                    <option value="1">امتیاز کاربران</option>
+                    <option value="2">پر بازدید ها</option>
+                    <option value="3">گرانترین</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="content">
+        <ng-container class="flex-col middle-sm middle-xs filterContainer">
+
+          <div>
+            <div class="col flex-warp filterContainer">
+
+              <div class="col center-xs filterItem  ">
+                <div class="title"><label for="sort" style="font-size: 17px;">
+                    300.000 تومان
+                  </label></div>
+
+              </div>
+
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="text">
+      <p style="text-align: center; margin-top: 2.5rem;">
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+        متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+        کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده
+        شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+        الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
+        دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای
+        اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+      </p>
+    </div>
+    <div class="flex-col column-sm column-xs pricingContainer">
+
+    </div>
+
+    <div class="popularContainer">
+      <div class="flex-col column-sm column-xs featuresContainer">
+        <div class="titles">تخصص های مربی</div>
+        <div class="content">
+          <ng-container *ngFor="let item of datas.CoachList.skills">
+            <div class="flex-col between-sm between-xs items">
+              <div class="title">{{ item.title }}</div>
+              <div class="value">{{ item.value }}</div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+    <div class="popularContainer">
+      <div class="flex-col column-sm column-xs featuresContainer">
+        <div class="titles">محصولات مرتبط</div>
+      </div>
+      <div class="flex-col middle-sm middle-xs content featuresContainer">
+        <ng-container *ngFor="let data of datas.CoachList.relatedpopularStore">
+          <app-popular-card [data]="data"></app-popular-card>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- <div class="popularContainer" style="text-align: center!important;">
+        <app-buttons [btnTitle]="addToCartTitleBtnName" [customClass]="addToCartCustomClass" [btnURL]="addToCartURLLink"
+          [icon]="addToCartbtnIcon"></app-buttons>
+      </div> -->
+    <div class="popularContainer">
+      <a [routerLink]="['/shop-products']" style="background-color: rgb(0, 188, 50);
+            height: 4.5rem;
+            width: 100%;
+            color: white;
+            border-radius: 1.5rem;" class="flex-col middle-sm center-sm middle-xs center-xs gymContainer">
+        اضافه کردن به سبد خرید
+      </a>
+    </div>
+  </ng-container>
+
+</div>

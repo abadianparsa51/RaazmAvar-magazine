@@ -1,0 +1,70 @@
+@import './../../../../assets/abstract/headquarters';
+
+.popularCardContainer {
+  width: 20rem;
+  height: 25rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: $border_radius;
+  overflow: hidden;
+  position: relative;
+  @include responsive('sm') {
+    width: 25rem;
+    height: 30rem;
+  }
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $black, $alpha: 0.5);
+  }
+  .titlesContainer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    color: $white;
+    .titles {
+      .title {
+        margin-bottom: 1rem;
+        p {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}
+:host {
+  &:not(:last-child) {
+    margin-left: 1rem;
+  }
+  &.listCard {
+    width: calc(50% - 0.5rem);
+    display: inline-block;
+    @include responsive('sm') {
+      width: calc(25% - 1rem);
+    }
+    &:not(:last-child) {
+      margin-left: 0rem;
+      margin-bottom: 0.5rem;
+      @include responsive('sm') {
+        margin-left: 0rem;
+        margin-bottom: 1rem;
+      }
+    }
+    > a {
+      width: 100%;
+      display: inline-block;
+    }
+    .popularCardContainer {
+      width: 100%;
+      height: 20rem;
+      @include responsive('sm') {
+        height: 28rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<form class="container" [ngClass]="{ gray: true }" [formGroup]="formData" (ngSubmit)="onSubmit()">
+  <div class="inputCont">
+
+    <input type="text" placeholder="نام استاد" formControlName="name">
+    <input type="text" placeholder="آدرس مربی" formControlName="address">
+
+    <!-- map -->
+    <app-search-map></app-search-map>
+    <!-- map -->
+    <textarea name="" id="" placeholder="توضیحات  کوتاه" formControlName="description" style="margin-top: 1rem;"> </textarea>
+    <p>توضیحات باید حداکثر 300 کاراکتر باشد</p>
+  </div>
+
+  <div class="flex-col between-sm between-xs uploadImageContainer">
+    <label for="image1" class="item">
+      <div class="flex-col center-sm middle-sm center-xs middle-xs content">
+        <img src="assets/image/image.png" alt="" *ngIf="!src[0]" />
+        <img [src]="src[0]" *ngIf="src[0]">
+        افزودن عکس اول
+      </div>
+      <input type="file" name="image1" (change)="handleFileInput($event.target.files)" formControlName="image" />
+    </label>
+    <label for="image2" class="item">
+      <div class="flex-col center-sm middle-sm center-xs middle-xs content">
+        <img src="assets/image/image.png" alt="" *ngIf="!src[1]" />
+        <img [src]="src[1]" *ngIf="src[1]">
+        افزودن عکس دوم
+      </div>
+      <input type="file" name="image2" (change)="handleFileInput($event.target.files)" formControlName="image" />
+    </label>
+    <label for="image3" class="item">
+      <div class="flex-col center-sm middle-sm center-xs middle-xs content">
+        <img src="assets/image/image.png" alt="" *ngIf="!src[2]" />
+        <img [src]="src[2]" *ngIf="src[2]">
+        افزودن عکس سوم
+      </div>
+      <input type="file" name="image3" (change)="handleFileInput($event.target.files)" formControlName="image" />
+    </label>
+    <label for="image4" class="item">
+      <div class="flex-col center-sm middle-sm center-xs middle-xs content">
+        <img src="assets/image/image.png" alt="" *ngIf="!src[3]" />
+        <img [src]="src[3]" *ngIf="src[3]">
+        افزودن عکس چهارم
+      </div>
+      <input type="file" name="image4" (change)="handleFileInput($event.target.files)" formControlName="image" />
+    </label>
+    <p>عکس ها باید حداکثر 300 کیلو بایت باشد</p>
+  </div>
+
+  <div class="featureContainer">
+    <ng-container *ngFor="let feature of features">
+      <input class="cerv-input" type="text" placeholder="عنوان" id="title" formControlName="title">
+      <input class="cerv-input" type="text" placeholder="مقدار یا توضیح" id="describtion"
+        formControlName="shortDescription">
+    </ng-container>
+    <div class="flex-col center-sm middle-sm center-xs middle-xs removeBtn" (click)="removefuture()"
+      *ngIf="features.length !== 0">
+      <p>حذف</p>
+    </div>
+
+    <p *ngIf="features.length !== 0">مثال : مساحت 300 متر</p>
+    <div class="addFutureBtn" (click)="addfuture()">افزودن امکانات +</div>
+  </div>
+  <div class="flex-col center-sm middle-sm center-xs middle-xs uploadCertificate">
+    <label class="content">
+      <input type="file" name="certificate" id="" (change)="handleDocsInput($event.target.files)" />
+      <p>آپلود کردن مدارک و جواز باشگاه و استاد</p>
+    </label>
+  </div>
+  <button class="flex-col center-sm middle-sm center-xs middle-xs submitContainer">
+    ثبت نهایی
+  </button>
+</form>
